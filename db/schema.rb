@@ -17,8 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_184749) do
   create_table "estate_sales", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.boolean "item_sold"
-    t.integer "item_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_184749) do
     t.string "name"
     t.string "image"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
