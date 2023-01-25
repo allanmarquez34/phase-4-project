@@ -28,13 +28,6 @@ class UsersController < ApplicationController
         head :no_content 
     end
 
-    def index 
-        users = User.all 
-        render json: users, status: :ok
-    end
-
-
-
     private 
 
     def user_params 
