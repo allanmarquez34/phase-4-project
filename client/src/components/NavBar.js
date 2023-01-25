@@ -1,7 +1,14 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
 
-function NavBar(){
+function NavBar({setUser}){
+    function handleLogoutClick(){
+        fetch("/logout", {method: "DELETE"}).then((r) => {
+            if (r.ok) {
+                setUser(null);
+            }
+        });
+    }
 
     return(
         <nav>
@@ -17,9 +24,9 @@ function NavBar(){
             <NavLink to="/cart">
                 Cart
             </NavLink>
-            <NavLink to="/">
-                Log out
-            </NavLink>
+            <button onClick={handleLogoutClick}>
+                logout
+            </button>
         </nav>
     )
 }

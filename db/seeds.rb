@@ -15,7 +15,8 @@ puts "..seeding items"
                       description: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false),
                       price: Faker::Commerce.price,
                       availability: Faker::Boolean.boolean,
-                      likes: Faker::Boolean.boolean,
+                      likes: false,
+                      cart: false,
                       estate_sale: EstateSale.all.sample,
                       user: User.all.sample )}
 

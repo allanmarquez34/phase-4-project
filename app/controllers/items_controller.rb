@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    wrap_parameters format: []
 
     def index
         items = Item.all
@@ -18,7 +19,7 @@ class ItemsController < ApplicationController
 
     def liked
         liked_items = Item.where(likes: true)
-        render json: liked_items, status: :accepted 
+        render json: liked_items, serializer: ItemSerializer status: :ok
     end
 
     private

@@ -1,13 +1,26 @@
-import React from "react"
+import React,{useEffect, useState} from "react"
 import LovedItems from "./LovedItems"
 
 function Home(){
+    // const [item, setItem] = useState([])
+    
+    // useEffect(() => {
+    //     fetch("/home")
+    //     .then((r) => r.json())
+    //     .then(setItem)
+    // },[])
+    
+    // console.log(item)
+    // const mappedLovedItems = item.map(oneItem => {
+    //     return <LovedItems
+    //     key={oneItem.id}
+    //     items={oneItem}/>
+    // })
+    // console.log(mappedLovedItems)
 
     return(
         <div>
-            <h1>hi</h1>
-            {console.log("test")}
-            <LovedItems/>
+            {/* {mappedLovedItems} */}
         </div>
     )
 }

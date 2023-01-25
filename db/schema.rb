@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_184749) do
     t.integer "price"
     t.boolean "availability"
     t.boolean "likes"
+    t.boolean "cart"
     t.integer "user_id", null: false
     t.integer "estate_sale_id", null: false
     t.datetime "created_at", null: false
