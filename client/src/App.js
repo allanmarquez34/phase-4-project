@@ -26,7 +26,7 @@ function App(){
   return(
     <div>
       <BrowserRouter>
-      <NavBar/>
+      <NavBar user={user} setUser={setUser}/>
       <Switch>
         <Route path="/home">
           <Home/>
