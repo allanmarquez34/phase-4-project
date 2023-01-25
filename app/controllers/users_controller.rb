@@ -12,11 +12,8 @@ class UsersController < ApplicationController
     end
 
     def update
-        # user = find_user.update!(user_params)
-        # render json: user, status: :created
-        user = @current_user
-        user.update!(user_params)
-        render json: @current_user, status: :accepted
+        user = find_user.update!(user_params)
+        render json: user, status: :created
     end 
 
 

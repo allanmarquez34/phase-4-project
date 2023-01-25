@@ -5,17 +5,20 @@ function NavBar(){
 
     return(
         <nav>
-            <Link>
+            <Link to="/home">
             More Than Coffins
             </Link>
-            <NavLink>
+            <NavLink to="/estatesales">
                 Estate Sales
             </NavLink>
-            <NavLink>
+            <NavLink to="/account">
                 My Account
             </NavLink>
-            <NavLink>
+            <NavLink to="/cart">
                 Cart
+            </NavLink>
+            <NavLink to="/">
+                Log out
             </NavLink>
         </nav>
     )
