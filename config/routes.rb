@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
 
   get "/home", to: "items#liked"
+  get "/cart", to: "items#cart"
   
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
