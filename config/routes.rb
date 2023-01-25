@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :items, only:[:index, :show, :update]
   resources :estate_sales, only: [:index, :show]
-  resources :users, only: [:update, :index]
+  resources :users, only: [:update]
 
   get "/home", to: "items#liked"
   
