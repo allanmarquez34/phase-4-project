@@ -8,23 +8,36 @@ class UsersController < ApplicationController
     end
 
     def show 
-        render json: @current_user
+        render json: current_user
     end
 
     def update
-        # user = find_user.update!(user_params)
-        # render json: user, status: :created
-        user = @current_user
+        user = logged_on_user.find(params[:id])
         user.update!(user_params)
-        render json: @current_user, status: :accepted
+        render json: user, status: :accepted
     end 
+
+    def destroy
+        user = logged_on_user.find(params[:id])
+        user.destroy
+        head :no_content 
+    end
+
+    def index 
+        users = User.all 
+        render json: users, status: :ok
+    end
+
 
 
     private 
-    # def find_user
-    #     User.find(param[:id])
-    # end
+
     def user_params 
         params.permit(:name, :image, :address, :email, :password)
     end 
+
+    def logged_on_user
+        User.where(:id => current_user.id)
+    end
+
 end
