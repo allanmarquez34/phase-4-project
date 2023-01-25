@@ -16,8 +16,9 @@ class ItemsController < ApplicationController
         render json: item, status: :accepted 
     end
 
-    def loved
-        items = Item.find(:all, :likes => 'true')
+    def liked
+        liked_items = Item.where(likes: true)
+        render json: liked_items, status: :accepted 
     end
 
     private
