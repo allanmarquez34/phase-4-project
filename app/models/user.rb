@@ -1,12 +1,12 @@
 class User < ApplicationRecord
+    has_secure_password
+    
     has_many :items 
     has_many :estate_sales, through: :items 
-    has_secure_password
-     
+    
+    validates_presence_of :name, :image, :email, :password, :address  
 
-    validates :name, presence: true
-    validates :image, presence: true 
-    validates :email, presence: true, uniqueness: true, email: true
-    validates :password, presence: true, length: {in: 6..20}
-    validates :address, presence: true, uniqueness: true 
+    validates :email, uniqueness: true
+    validates :password, length: { in: 6..20 }
+
 end
