@@ -11,9 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_24_184749) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "estate_sales", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -28,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_184749) do
     t.integer "price"
     t.boolean "availability"
     t.boolean "likes"
-    t.bigint "user_id", null: false
-    t.bigint "estate_sale_id", null: false
+    t.integer "user_id", null: false
+    t.integer "estate_sale_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["estate_sale_id"], name: "index_items_on_estate_sale_id"
