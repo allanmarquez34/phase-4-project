@@ -28,8 +28,6 @@ class UsersController < ApplicationController
         render json: users, status: :ok
     end
 
-
-
     private 
 
     def user_params 
