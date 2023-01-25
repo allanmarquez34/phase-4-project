@@ -1,11 +1,13 @@
 class EstateSalesController < ApplicationController
 
     def index 
-        estate_sales = 
+        estate_sales = EstateSale.all
+        render json: estate_sales, status: :ok 
     end
 
     def show 
-
+        estate_sale = EstateSale.find(params[:id])
+        render json: estate_sale, serializer: EstateSaleItemsSerializer, status: :ok 
     end
     
 end
