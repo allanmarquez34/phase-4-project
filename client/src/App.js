@@ -1,19 +1,46 @@
-import { useState, useEffect } from "react";
+import React from "react"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import NavBar from "./components/NavBar"
+import LoginLanding from "./components/LoginLanding"
+import Home from "./components/Home"
+import EstateSalesList from "./components/EstateSalesList"
+import IndividualEstate from "./components/IndividualEstate"
+import IndividualItemPage from "./components/IndividualItemPage"
+import UserAccountPage from "./components/UserAccountPage"
+import Cart from "./components/Cart"
 
-function App() {
-  const [count, setCount] = useState(0);
+function App(){
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
-
-  return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
+  return(
+    <div>
+      <BrowserRouter>
+      <NavBar/>
+      <Switch>
+        <Route>
+          <LoginLanding/>
+        </Route>
+        <Route>
+          <Home/>
+        </Route>
+        <Route>
+          <EstateSalesList/>
+        </Route>
+        <Route>
+          <IndividualEstate/>
+        </Route>
+        <Route>
+          <IndividualItemPage/>
+        </Route>
+        <Route>
+          <UserAccountPage/>
+        </Route>
+        <Route>
+          <Cart/>
+        </Route>
+      </Switch>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
