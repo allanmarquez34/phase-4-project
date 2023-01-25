@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.integer :price
       t.boolean :availability
       t.boolean :likes
+      t.boolean :cart
       t.belongs_to :user, null: false, foreign_key: true
       t.belongs_to :estate_sale, null: false, foreign_key: true
 
