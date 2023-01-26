@@ -41,7 +41,7 @@ function App(){
           <IndividualItemPage/>
         </Route>
         <Route path="/account">
-          <UserAccountPage/>
+          <UserAccountPage user={user} setUser={setUser}/>
         </Route>
         <Route path="/cart">
           <Cart/>

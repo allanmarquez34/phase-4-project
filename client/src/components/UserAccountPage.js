@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import UpdateUser from "./UpdateUser"
 
-function UserAccountPage(){
+function UserAccountPage({user}){
+    
 
     return(
         <div>
-            <h1>hey</h1>
-            <UpdateUser/>
+            <h1>What do you wanan change now {user.name} 🙄</h1>
+            <h2>Update User Information</h2>
+            <UpdateUser user={user}/>
         </div>
     )
 }
