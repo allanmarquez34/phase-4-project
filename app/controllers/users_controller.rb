@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     end
 
     def update
+        puts "Test"
         user = logged_on_user.find(params[:id])
         user.update!(user_params)
         render json: user, status: :accepted

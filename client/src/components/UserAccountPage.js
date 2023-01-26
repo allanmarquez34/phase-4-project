@@ -1,14 +1,17 @@
 import React, { useEffect } from "react"
 import UpdateUser from "./UpdateUser"
 
-function UserAccountPage({user}){
+function UserAccountPage({user, setUser}){
     
 
     return(
         <div>
-            <h1>What do you wanan change now {user.name} 🙄</h1>
-            <h2>Update User Information</h2>
-            <UpdateUser user={user}/>
+        <h1>welcome back {user.name} </h1>
+        <img src={user.image}/>
+        <p>{user.address}</p>
+        <p>{user.email}</p>
+        <h2>Update Profile Information</h2>
+            <UpdateUser user={user} setUser={setUser}/>
         </div>
     )
 }

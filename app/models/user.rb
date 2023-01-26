@@ -6,7 +6,7 @@ class User < ApplicationRecord
     
     validates_presence_of :name, :image, :email, :password, :address  
 
-    validates :email, uniqueness: true
+    # validates :email, uniqueness: true
     validates :password, length: { in: 6..20 }
 
 end
