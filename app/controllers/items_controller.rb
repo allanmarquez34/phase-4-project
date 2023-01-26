@@ -19,13 +19,18 @@ class ItemsController < ApplicationController
 
     def liked
         liked_items = Item.where(likes: true)
-        render json: liked_items, serializer: ItemSerializer status: :ok
+        render json: liked_items, status: :ok
+    end
+
+    def cart 
+        cart_items = Item.where(cart: true)
+        render json: cart_items, status: :ok 
     end
 
     private
 
     def item_params
-        params.permit(:likes)
+        params.permit(:likes, :cart)
     end
 
 end
