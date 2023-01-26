@@ -1,17 +1,15 @@
 import React from "react"
+import LovedItemCard from "./LovedItemCard"
 
-function LovedItems({item}){
+function LovedItems({ lovedItems }){
 
-    // return(
-    //     <section>
-    //         <ul>
-    //             <img src={item.image}/>
-    //             <li>{item.title}</li>
-    //             <p>{item.description}</p>
-    //             <li>{item.price}</li>
-    //         </ul>
-    //     </section>
-    // )
-}
+    const mappedLoves = lovedItems.map(oneLove => {
+        return <LovedItemCard key={oneLove.id} lovedItems={oneLove} />
+    });
+
+    return(
+        <ul>{mappedLoves}</ul>
+    );
+};
 
 export default LovedItems
