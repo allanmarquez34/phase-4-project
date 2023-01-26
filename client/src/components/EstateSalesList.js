@@ -1,15 +1,16 @@
 import React from "react"
-import SearchBar from "./Searchbar"
+import EstateCard from "./EstateCard"
 
 
-function EstateSalesList(){
+function EstateSalesList({ estates }){
 
     return(
-        <div>
-            <h1>hello</h1>
-            <SearchBar/>
-        </div>
-    )
-}
+        <ul>
+            {estates.map((estate) => (
+                <EstateCard estate={estate} />
+            ))}
+        </ul>
+    );
+};
 
 export default EstateSalesList

@@ -7,7 +7,7 @@ class EstateSalesController < ApplicationController
 
     def show 
         estate_sale = EstateSale.find(params[:id])
-        render json: estate_sale, serializer: EstateSaleItemsSerializer, status: :ok 
+        render json: estate_sale, status: :ok 
     end
     
 end

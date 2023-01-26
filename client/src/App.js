@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import LoginLanding from "./components/LoginLanding"
 import Home from "./components/Home"
-import EstateSalesList from "./components/EstateSalesList"
+import EstateSalesPage from "./components/EstateSalesPage"
 import IndividualEstate from "./components/IndividualEstate"
-import IndividualItemPage from "./components/IndividualItemPage"
+import IndividualItemPage from "./components/IndividualItempage"
 import UserAccountPage from "./components/UserAccountPage"
 import Cart from "./components/Cart"
 
@@ -32,7 +32,7 @@ function App(){
           <Home/>
         </Route>
         <Route path="/estatesales">
-          <EstateSalesList />
+          <EstateSalesPage />
         </Route>
         <Route path="estatesales/individualestate/:id">
           <IndividualEstate/>

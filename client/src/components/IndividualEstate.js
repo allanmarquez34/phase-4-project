@@ -1,11 +1,11 @@
 import React from "react"
-import ItemCard from "./ItemCard"
+import ItemList from "./ItemList"
 
 function IndividualEstate(){
 
     return(
         <div>
-            <ItemCard/>
+            <ItemList/>
         </div>
     )
 }
