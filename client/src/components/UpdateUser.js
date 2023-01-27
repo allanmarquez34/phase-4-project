@@ -12,8 +12,7 @@ function UpdateUser({user}){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(user)
-        
+        // console.log(user)
         
         const editAccount = {
             name: editName,
@@ -22,7 +21,7 @@ function UpdateUser({user}){
             email: editEmail,
             password: editPassword
         }
-        fetch(`/users/${user.id}`, {
+        fetch(`/me}`, {
             method:"PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -35,16 +34,7 @@ function UpdateUser({user}){
                         email: "",
                         password: ""
                     })
-
         }
-        // .then ((r) => r.json())
-        // .then((updatedUser) => console.log(updatedUser))
-
-        // user = userData
-    
-    // function handleChange(e){
-    //     setUser({...user, [e.target.id]: e.target.value})
-    //}
 
     return(
         <div>
@@ -86,6 +76,7 @@ function UpdateUser({user}){
             type="password"
             id="password"
             value={editPassword.password}
+            placeholder="please enter password to continue"
             autoComplete="off"
             onChange={(e) => setPassword(e.target.value) } />
         <button type="submit" >Update Profile</button>

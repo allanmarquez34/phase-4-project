@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import LovedItems from "./LovedItems"
+import ItemCard from "./ItemCard"
 
 function Home(){
 
@@ -13,6 +14,7 @@ function Home(){
 
     return (
         <div>
+            <ItemCard/>
             <LovedItems lovedItems={lovedItems}/>
         </div>
     )
