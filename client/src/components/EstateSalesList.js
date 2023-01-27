@@ -4,11 +4,13 @@ import EstateCard from "./EstateCard"
 
 function EstateSalesList({ estates }){
 
+    const mappedEstates =estates.map(oneEstate => {
+        return <EstateCard key={oneEstate.id} estates={oneEstate} />
+    })
+
     return(
         <ul>
-            {estates.map((estate) => (
-                <EstateCard estate={estate} />
-            ))}
+            {mappedEstates}
         </ul>
     );
 };

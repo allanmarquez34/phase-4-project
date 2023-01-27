@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 
-function EstateCard({ estate }){
+function EstateCard({ estates }){
 
-    // const [loved, setIsLoved] = useState(true);
+    const [isLoved, setIsLoved] = useState(true);
 
-    // const itemsArray = estate.items
-    // console.log(itemsArray)
+    function handleClick() {
+        setIsLoved(!isLoved)
+    }
 
     return(
         <li>
-            <img src={estate.item[0].image}/>
-            <h4>{estate.name}</h4>
-            <p></p>
+            <img src={estates.items[2].image}/>
+            <h2>{estates.name}</h2>
+            <h3>{estates.created_at}</h3>
+            {isLoved ? (
+            <button onClick={handleClick} className="primary">Unloved</button>
+          ) : (
+            <button>Loved</button>
+          )}
         </li>
     );
 };
