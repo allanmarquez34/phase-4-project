@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import LoginLanding from "./components/LoginLanding"
 import Home from "./components/Home"
-import EstateSalesList from "./components/EstateSalesList"
+import EstateSalesPage from "./components/EstateSalesPage"
 import IndividualEstate from "./components/IndividualEstate"
 import IndividualItemPage from "./components/IndividualItemPage"
 import UserAccountPage from "./components/UserAccountPage"
 import Cart from "./components/Cart"
 
 function App(){
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -32,9 +32,9 @@ function App(){
           <Home/>
         </Route>
         <Route path="/estatesales">
-          <EstateSalesList />
+          <EstateSalesPage />
         </Route>
-        <Route path="estatesales/individualestate/:id">
+        <Route path="/estate_sales/:id">
           <IndividualEstate/>
         </Route>
         <Route path="/individualestate/individualitem/:id">
@@ -49,7 +49,7 @@ function App(){
       </Switch>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
 export default App

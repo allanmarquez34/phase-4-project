@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   patch "/me", to: "users#update"
+<<<<<<< HEAD
+=======
+
+  get "/item", to: "items#index"
+
+>>>>>>> 69596e18e2d9b3e912e3cb5613f41ad2834b9d63
 end
