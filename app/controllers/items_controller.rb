@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-    wrap_parameters format: []
+    # wrap_parameters format: []
 
     def index
         items = Item.all

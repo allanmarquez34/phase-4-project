@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react"
-import {useParams} from "react-router-dom"
+import React, { useState } from "react"
 
 function UpdateUser({user}){
     const [editEmail, setEmail] = useState("");
@@ -7,7 +6,6 @@ function UpdateUser({user}){
     const [editImage, setImage] = useState("");
     const [editName, setName] = useState("");
     const [editAddress, setAddress] = useState("");
-    const {id} = useParams()
     const [editAccount, setEditAccount] = useState([])
 
     function handleSubmit(e){
@@ -86,6 +84,7 @@ function UpdateUser({user}){
             type="password"
             id="password"
             value={editPassword.password}
+            placeholder="input password to continue"
             autoComplete="off"
             onChange={(e) => setPassword(e.target.value) } />
         <button type="submit" >Update Profile</button>
